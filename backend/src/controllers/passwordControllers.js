@@ -26,14 +26,15 @@ const hashPassword = (req, res, next) => {
   }
 };
 
-const verifyPassword = (req, res) => {
+const verifyPassword = (req, res, next) => {
   argon2
     .verify(req.user.hashedPassword, req.body.password)
     .then((isVerified) => {
       if (isVerified) {
         const data = req.user;
         delete data.hashedPassword;
-        res.status(200).json(data);
+        req.body = data;
+        next();
       } else {
         res.sendStatus(401);
       }
