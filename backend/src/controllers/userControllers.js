@@ -59,7 +59,7 @@ const add = (req, res) => {
   models.user
     .insert(user)
     .then(([result]) => {
-      res.location(`/users/${result.insertId}`).sendStatus(201);
+      res.status(201).json(result);
     })
     .catch((err) => {
       console.error(err);
@@ -84,10 +84,10 @@ const destroy = (req, res) => {
 };
 
 const login = (req, res, next) => {
-  const { mail } = req.body;
+  const { email } = req.body;
 
-  models.doctor
-    .findByEmail(mail)
+  models.user
+    .findByEmail(email)
     .then(([users]) => {
       if (users[0] != null) {
         req.user = users[0];
