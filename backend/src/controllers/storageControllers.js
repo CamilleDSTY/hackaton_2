@@ -1,7 +1,8 @@
+/* eslint-disable prefer-destructuring */
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.item
+  models.storage
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -13,8 +14,8 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.item
-    .find(req.params.id)
+  models.storage
+    .find(req.pastorages.id)
     .then(([rows]) => {
       if (rows[0] == null) {
         res.sendStatus(404);
@@ -29,14 +30,14 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const item = req.body;
+  const storage = req.body;
 
   // TODO validations (length, format...)
 
-  item.id = parseInt(req.params.id, 10);
+  storage.id = parseInt(req.pastorages.id, 10);
 
-  models.item
-    .update(item)
+  models.storage
+    .update(storage)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -51,14 +52,14 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const item = req.body;
+  const storage = req.body;
 
   // TODO validations (length, format...)
 
-  models.item
-    .insert(item)
+  models.storage
+    .insert(storage)
     .then(([result]) => {
-      res.location(`/items/${result.insertId}`).sendStatus(201);
+      res.status(201).json(result);
     })
     .catch((err) => {
       console.error(err);
@@ -67,8 +68,8 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.item
-    .delete(req.params.id)
+  models.storage
+    .delete(req.pastorages.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
