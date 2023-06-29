@@ -21,7 +21,7 @@ class modelManager extends AbstractManager {
 
   findAllModels() {
     return this.database.query(
-      `select m.name, m.image, b.title from  ${this.table} as m join brand as b on b.id = m.brand_id`
+      `select m.name, m.image,m.id, b.title, b.id as brand_id from  ${this.table} as m join brand as b on b.id = m.brand_id`
     );
   }
 }

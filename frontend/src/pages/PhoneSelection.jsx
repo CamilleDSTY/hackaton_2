@@ -6,11 +6,13 @@ export default function PhoneSelection() {
   const [models, setModels] = useState();
   const [brands, setBrands] = useState();
   const [selectedBrand, setSelectedBrand] = useState("");
+
   const getAllModels = () => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/models`, {
       credentials: "include",
     })
       .then((resp) => resp.json())
+
       .then((data) => {
         setModels(
           data.filter((model) => {
@@ -23,6 +25,7 @@ export default function PhoneSelection() {
       })
       .catch((err) => console.error(err));
   };
+
   const getAllBrands = () => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/brands`, {
       credentials: "include",
@@ -43,6 +46,7 @@ export default function PhoneSelection() {
     getAllModels();
     getAllBrands();
   }, [selectedBrand]);
+
   if (!models || !brands) {
     return <p>En attente des marques...</p>;
   }
