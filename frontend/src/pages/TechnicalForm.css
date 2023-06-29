@@ -1,0 +1,107 @@
+div.form-select {
+  padding: 20px 0;
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+}
+
+h1.form-h1 {
+  font-size: 23px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+p.technicals {
+  text-align: left;
+  font-size: 16px;
+  color: rgba(35, 61, 141, 0.6);
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+}
+
+section.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  box-shadow: 0 0 60px rgba(35, 61, 141, 0.12);
+}
+
+label {
+  width: 100%;
+}
+
+label > select.selection {
+  border: 1px solid #233d8d;
+  border-radius: 5px;
+  height: 35px;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+}
+
+/* label > input#image {
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+    display: none; 
+    border: none;
+  } */
+
+button[type="submit"].form-display-button {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  padding-top: 0.55rem;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #233d8d;
+  color: #ffffff;
+  width: 50%;
+  margin: auto;
+  cursor: pointer;
+}
+
+div.features {
+  display: flex;
+}
+div.features img {
+  max-width: 20%;
+}
+
+@media screen and (min-width: 768px) {
+  h1.form-h1 {
+    font-size: 28px;
+  }
+
+  section.form {
+    padding: 5rem;
+  }
+
+  form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 0.5rem;
+    margin: 0 auto;
+  }
+
+  form > p {
+    text-align: left;
+    margin: 0;
+    padding-top: 2px;
+    font-size: 20px;
+  }
+
+  form > label > select {
+    height: 45px;
+  }
+
+  button.form-display-button {
+    font-size: 24px;
+    width: 40%;
+  }
+}
