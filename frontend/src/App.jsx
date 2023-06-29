@@ -2,12 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import { UserContextProvider } from "./contexts/UserContext";
 import Connection from "./pages/Connection";
 import HomeAdmin from "./pages/HomeAdmin";
+import TechnicalForm from "./pages/TechnicalForm";
 import CreateModelForm from "./components/CreateModelForm";
 // import DatabaseView from "./pages/DatabaseView";
 // import Faq from "./pages/Faq";
-import TechnicalForm from "./pages/TechnicalForm";
-import DatabaseUser from "./pages/DatabaseUser";
 import Profile from "./pages/Profile";
+import DatabaseUser from "./pages/DatabaseUser";
 import "./App.css";
 
 function App() {
