@@ -1,5 +1,6 @@
 // import some node modules for later
 
+require("dotenv").config();
 const fs = require("node:fs");
 const path = require("node:path");
 
@@ -35,7 +36,7 @@ app.use("/api", router);
 
 // serve the `backend/public` folder for public resources
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use("/public", express.static(path.join(__dirname, "../public")));
 
 // serve REACT APP
 
