@@ -80,8 +80,10 @@ function LogIn() {
             onChange={handleChangePassword}
           />
         </div>
-        <div className="button-container">
-          <button type="submit">Se connecter </button>
+        <div className="loginpage-button-container">
+          <button type="submit" className="loginpage-button">
+            Se connecter
+          </button>
         </div>
       </form>
     </div>
@@ -89,7 +91,7 @@ function LogIn() {
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">
+        <div className="tittle">
           <img className="emmaus" src={Logo} alt="Loading..." />
         </div>
         {renderForm}
