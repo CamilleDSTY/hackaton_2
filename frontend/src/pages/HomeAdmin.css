@@ -16,7 +16,7 @@ figcaption img {
   filter: opacity(0.2);
 }
 
-button {
+button.admin-page-button {
   height: 10%;
   width: 30%;
   cursor: pointer;
@@ -30,7 +30,7 @@ button {
   background-color: #233d8d;
 }
 
-.button-container {
+.adminpage-button-container {
   display: flex;
   flex-direction: column;
   justify-content: center;

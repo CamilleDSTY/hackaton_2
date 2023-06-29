@@ -17,7 +17,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Connection />} />
-          <Route path="/user-metier" element={<CreateModelForm />} />
+          <Route path="/admin-new-model" element={<CreateModelForm />} />
           <Route path="/bdd-globale" element={<DatabaseView />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/admin-page" element={<HomeAdmin />} />

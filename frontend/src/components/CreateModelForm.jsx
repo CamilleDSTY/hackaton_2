@@ -74,6 +74,7 @@ export default function CreateModelForm() {
           <label htmlFor="brand">
             <input
               type="text"
+              className="form-input"
               id="brand"
               // placeholder="Marque"
               value={brand}
@@ -86,6 +87,7 @@ export default function CreateModelForm() {
           <label htmlFor="name">
             <input
               type="text"
+              className="form-input"
               id="name"
               // placeholder="Nom du modèle"
               value={name}
@@ -96,12 +98,15 @@ export default function CreateModelForm() {
           <label htmlFor="image">
             <input
               type="file"
+              className="form-input"
               id="image"
               onChange={handleChangeImage}
               value={image}
             />
           </label>
-          <button type="submit">Ajouter le modèle</button>
+          <button type="submit" className="form-validation-button">
+            Ajouter le modèle
+          </button>
         </form>
       </section>
     </div>

@@ -42,7 +42,7 @@ label {
   width: 100%;
 }
 
-label > input {
+label > input.form-input {
   border: 1px solid #233d8d;
   border-radius: 5px;
   height: 35px;
@@ -58,7 +58,7 @@ label > input#image {
   border: none;
 }
 
-button[type="submit"] {
+button[type="submit"].form-validation-button {
   padding: 0.5rem;
   padding-top: 0.55rem;
   border: none;
@@ -101,7 +101,7 @@ button[type="submit"] {
     height: 45px;
   }
 
-  button {
+  button.form-validation-button {
     font-size: 24px;
     width: 40%;
   }
