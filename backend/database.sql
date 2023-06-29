@@ -74,12 +74,8 @@ DROP TABLE IF EXISTS `config_min`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `config_min` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nb_ram` int NOT NULL,
-  `storage` int NOT NULL,
-  `network` varchar(100) DEFAULT NULL,
-  `screen` int NOT NULL,
-  `charger` tinyint(1) NOT NULL,
-  `cable` tinyint(1) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `value` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
