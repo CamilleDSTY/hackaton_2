@@ -1,13 +1,30 @@
-import Home from "./pages/Home";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Connection from "./pages/Connection";
+import HomeAdmin from "./pages/HomeAdmin";
 import "./App.css";
+import NewModel from "./components/NewModel";
+import DatabaseView from "./pages/DatabaseView";
+import Faq from "./pages/Faq";
+import TechnicalForm from "./pages/TechnicalForm";
+import DatabaseUser from "./pages/DatabaseUser";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
+    <main>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Connection />} />
+          <Route path="/user-metier" element={<NewModel />} />
+          <Route path="/bdd-globale" element={<DatabaseView />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/admin-page" element={<HomeAdmin />} />
+          <Route path="/fiche-technique" element={<TechnicalForm />} />
+          <Route path="/bdd-user" element={<DatabaseUser />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </Router>
+    </main>
   );
 }
 
