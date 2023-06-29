@@ -5,11 +5,10 @@ import HomeAdmin from "./pages/HomeAdmin";
 import "./App.css";
 import PhoneSelection from "./pages/PhoneSelection";
 import CreateModelForm from "./components/CreateModelForm";
-// import DatabaseView from "./pages/DatabaseView";
 import Faq from "./pages/Faq";
+import TechnicalForm from "./pages/TechnicalForm";
 import Profile from "./pages/Profile";
 import DatabaseUser from "./pages/DatabaseUser";
-import TechnicalForm from "./pages/TechnicalForm";
 
 function App() {
   return (
@@ -17,12 +16,12 @@ function App() {
       <UserContextProvider>
         <Routes>
           <Route path="/" element={<Connection />} />
-          <Route path="/selection" element={<PhoneSelection />} />
+          <Route path="/user-home" element={<PhoneSelection />} />
           <Route path="/admin-new-model" element={<CreateModelForm />} />
-          {/* <Route path="/bdd-globale" element={<DatabaseView />} /> */}
+          <Route path="/fiche-technique/:id" element={<TechnicalForm />} />
+          <Route path="/selection" element={<PhoneSelection />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/admin-page" element={<HomeAdmin />} />
-          <Route path="/fiche-technique" element={<TechnicalForm />} />
           <Route path="/bdd-user" element={<DatabaseUser />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
