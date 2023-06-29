@@ -1,40 +1,60 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./PhoneSelection.css";
 import NavBar from "../components/NavBar";
 
 export default function PhoneSelection() {
-  //   const [brand, setBrand] = useState();
-  //   const [model, setModel] = useState();
+  const [brands, setBrands] = useState();
+  const [models, setModels] = useState();
+  // const [oneBrand, setOneBrand] = useState();
 
-  //   const getAllBrand = () => {
-  //     fetch(`${import.meta.env.VITE_BACKEND_URL}/${id}`)
-  //       .then((resp) => resp.json())
-  //       .then((data) => setBrand(data))
-  //       .catch((err) => console.error(err));
-  //   };
+  const getAllBrands = () => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/brands`)
+      .then((resp) => resp.json())
+      .then((data) => setBrands(data))
+      .catch((err) => console.error(err));
+  };
 
-  //   const getAllModel = () => {
-  //     fetch(`${import.meta.env.VITE_BACKEND_URL}/${id}`)
-  //       .then((resp) => resp.json())
-  //       .then((data) => setModel(data))
-  //       .catch((err) => console.error(err));
-  //   };
+  const getAllModels = () => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/models`)
+      .then((resp) => resp.json())
+      .then((data) => setModels(data))
+      .catch((err) => console.error(err));
+  };
 
-  //   useEffect(() => {
-  //     getAllBrand();
-  //     getAllModel();
-  //   }, []);
+  // const getOneBrand = () => {
+  //   fetch(`${import.meta.env.VITE_BACKEND_URL}/brands/`)
+  //     .then((resp) => resp.json())
+  //     .then((data) => setOneBrand(data))
+  //     .catch((err) => console.error(err));
+  // };
 
-  // if (!brand || !model) {
-  //   return <p>En attente des marques...</p>;
-  // }
+  useEffect(() => {
+    getAllBrands();
+    getAllModels();
+    // getOneBrand();
+  }, []);
+
+  if (!brands || !models) {
+    return <p>En attente des marques...</p>;
+  }
 
   return (
     <section>
       <NavBar />
+      <select className="brandSelection">
+        <option>Choisir une marque</option>
+        {brands.map((brand) => (
+          <option>{brand.title}</option>
+        ))}
+      </select>
+
+      <select className="modelSelection">
+        <option>Choisir un modèle</option>
+        {models.map((model) => (
+          <option>{model.name}</option>
+        ))}
+      </select>
       <section className="phoneSection">
-        <p>Marque</p>
-        <p>Modèle</p>
         <a href="/telephone" className="enregistrement">
           Enregistrer un nouveau téléphone
         </a>
