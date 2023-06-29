@@ -92,7 +92,6 @@ export default function PhoneSelection() {
                 ))}
               </tbody>
             </table>
-            <p className="pagecount"> Pages 1 / 2</p>
           </div>
         </section>
       </section>
