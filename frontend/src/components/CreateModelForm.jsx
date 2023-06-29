@@ -11,7 +11,13 @@ export default function CreateModelForm() {
   const [image, setImage] = useState("");
 
   const handleChangeBrand = (e) => {
-    setBrand(e.target.value);
+    const brandIdToUpdate = parseInt(e.target.value, 10);
+
+    if (!Number.isNaN(brandIdToUpdate, 10)) {
+      setBrand(brandIdToUpdate);
+    } else {
+      alert("Ce champ est requis, veuillez renseigner une valeur");
+    }
   };
 
   const handleChangeName = (e) => {
@@ -28,36 +34,39 @@ export default function CreateModelForm() {
     }
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  //   if (!name || !brand) {
-  //     alert("Veuillez remplir tous les champs obligatoires.");
-  //   } else {
-  // const modelData = new FormData();
-  // modelData.append("brand", brand);
-  // modelData.append("name", name);
-  // if (image) {
-  //   modelData.append("image", image);
-  // }
+    if (!name || !brand) {
+      alert("Veuillez remplir tous les champs obligatoires.");
+    } else {
+      const modelData = new FormData();
+      modelData.append("brand_id", brand);
+      modelData.append("name", name);
+      if (image) {
+        modelData.append("image", image);
+      }
 
-  //     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/models`, {
-  //       method: "POST",
-  // credentials: "include",
-  //       headers: {
-  //   "Content-Type": "multipart/form-data",
-  //       },
-  //       body: modelData,
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         navigate(`/models/${data.id}`);
-  //       })
-  //       .catch((err) => {
-  //         alert("Une erreur est survenue, veuillez réessayer.");
-  //       });
-  //   }
-  // };
+      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/models`, {
+        method: "POST",
+        credentials: "include",
+        // headers: {
+        //   "Content-Type": "multipart/form-data",
+        // },
+        body: modelData,
+      })
+        .then((res) => res.json())
+        .then(() => {
+          alert("Votre modèle a bien été enregistré.");
+          setBrand("");
+          setName("");
+          setImage("");
+        })
+        .catch(() => {
+          alert("Une erreur est survenue, veuillez réessayer.");
+        });
+    }
+  };
 
   return (
     <div className="form-container">
@@ -65,9 +74,7 @@ export default function CreateModelForm() {
       <section className="form">
         <p>Remplissez les champs ci-dessous pour enregistrer votre modèle :</p>
         <p className="required-fields">* : champs obligatoires</p>
-        <form
-        // onSubmit={handleSubmit}
-        >
+        <form onSubmit={handleSubmit}>
           <p className="p-input">
             <strong>*</strong> Marque :
           </p>
@@ -76,7 +83,7 @@ export default function CreateModelForm() {
               type="text"
               className="form-input"
               id="brand"
-              // placeholder="Marque"
+              // placeholder="Nom du modèle"
               value={brand}
               onChange={handleChangeBrand}
             />
@@ -101,7 +108,6 @@ export default function CreateModelForm() {
               className="form-input"
               id="image"
               onChange={handleChangeImage}
-              value={image}
             />
           </label>
           <button type="submit" className="form-validation-button">

@@ -59,6 +59,7 @@ const add = (req, res) => {
   models.model
     .insert(model)
     .then(([result]) => {
+      console.log(result);
       res.status(201).json(result);
     })
     .catch((err) => {

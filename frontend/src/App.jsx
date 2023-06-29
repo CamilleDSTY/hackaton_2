@@ -18,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Connection />} />
           <Route path="/admin-new-model" element={<CreateModelForm />} />
+          {/* <Route path="/models/:id" element={REMPLACER_PAR_LE_NOM_DU_COMPOSANT_} /> */}
           <Route path="/bdd-globale" element={<DatabaseView />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/admin-page" element={<HomeAdmin />} />
