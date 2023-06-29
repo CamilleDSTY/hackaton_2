@@ -1,9 +1,11 @@
+// import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Connection from "./pages/Connection";
 import HomeAdmin from "./pages/HomeAdmin";
 import "./App.css";
-import NewModel from "./components/NewModel";
 import PhoneSelection from "./pages/PhoneSelection";
+import CreateModelForm from "./components/CreateModelForm";
 import Faq from "./pages/Faq";
 import TechnicalForm from "./pages/TechnicalForm";
 import DatabaseUser from "./pages/DatabaseUser";
@@ -15,8 +17,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Connection />} />
-          <Route path="/user-metier" element={<NewModel />} />
           <Route path="/selection" element={<PhoneSelection />} />
+          <Route path="/admin-new-model" element={<CreateModelForm />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/admin-page" element={<HomeAdmin />} />
           <Route path="/fiche-technique" element={<TechnicalForm />} />

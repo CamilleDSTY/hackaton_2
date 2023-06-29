@@ -7,11 +7,11 @@ export default function NavBar() {
     <section className="headband">
       <div className="void">
         <img className="logo" src={Logo} alt="" />
-        <p className="user">Bienvenue Alicia</p>
+        <p className="helloUser">Bienvenue Alicia</p>
       </div>
       <div className="params">
         <Link to="/faq">
-          <li> ? FAQ</li>
+          <li> FAQ</li>
         </Link>
         <Link to="/deconnexion">
           <li>Deconnexion</li>

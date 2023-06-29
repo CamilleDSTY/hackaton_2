@@ -5,48 +5,6 @@
   height: fit-content;
 }
 
-.phoneSection {
-  background-color: white;
-  box-shadow: 0 0 60px rgba(35, 61, 141, 0.12);
-  padding: 3rem 1.5rem;
-  margin: 10rem auto;
-  width: 80%;
-}
-
-a.enregistrement {
-  background-color: #00acb0;
-  border-radius: 16px;
-  padding: 1rem;
-  margin-left: 54%;
-  text-decoration: none;
-  color: white;
-}
-
-.phoneCard {
-  padding: 2rem;
-}
-
-.card > table {
-  border-collapse: collapse;
-  text-align: center;
-  width: 100%;
-}
-
-table .phoneTable > tr:nth-child(even) {
-  background-color: #ced4e5;
-}
-table .phoneTable > tr:nth-child(odd) {
-  background-color: #e8ebf5;
-}
-table .phoneTable > th {
-  background-color: #233d8d;
-  color: white;
-}
-table .phoneTable > th,
-td {
-  border: 1px #233d8d;
-  padding: 12px;
-}
 .pagecount {
   padding: 1em;
   text-align: center;
