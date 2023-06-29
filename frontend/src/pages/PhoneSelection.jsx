@@ -1,32 +1,32 @@
 import "./PhoneSelection.css";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 export default function PhoneSelection() {
-  const [brand, setBrand] = useState();
-  const [model, setModel] = useState();
+  // const [brand, setBrand] = useState();
+  // const [model, setModel] = useState();
 
-  const getAllBrand = () => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/${id}`)
-      .then((resp) => resp.json())
-      .then((data) => setBrand(data))
-      .catch((err) => console.error(err));
-  };
+  // const getAllBrand = () => {
+  //   fetch(`${import.meta.env.VITE_BACKEND_URL}/${id}`)
+  //     .then((resp) => resp.json())
+  //     .then((data) => setBrand(data))
+  //     .catch((err) => console.error(err));
+  // };
 
-  const getAllModel = () => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/${id}`)
-      .then((resp) => resp.json())
-      .then((data) => setModel(data))
-      .catch((err) => console.error(err));
-  };
+  // const getAllModel = () => {
+  //   fetch(`${import.meta.env.VITE_BACKEND_URL}/${id}`)
+  //     .then((resp) => resp.json())
+  //     .then((data) => setModel(data))
+  //     .catch((err) => console.error(err));
+  // };
 
-  useEffect(() => {
-    getAllBrand();
-    getAllModel();
-  }, []);
+  // useEffect(() => {
+  //   getAllBrand();
+  //   getAllModel();
+  // }, []);
 
-  if (!brand || !model) {
-    return <p>En attente des marques...</p>;
-  }
+  // if (!brand || !model) {
+  //   return <p>En attente des marques...</p>;
+  // }
 
   return (
     <section className="phoneSection">
