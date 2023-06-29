@@ -57,7 +57,7 @@ function LogIn() {
   };
 
   const renderForm = (
-    <div className="form">
+    <div className="loginForm">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <p className="connect">Connexion</p>
@@ -94,6 +94,7 @@ function LogIn() {
         <div className="tittle">
           <img className="emmaus" src={Logo} alt="Loading..." />
         </div>
+
         {renderForm}
       </div>
     </div>

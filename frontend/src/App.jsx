@@ -2,13 +2,14 @@ import { Routes, Route } from "react-router-dom";
 import { UserContextProvider } from "./contexts/UserContext";
 import Connection from "./pages/Connection";
 import HomeAdmin from "./pages/HomeAdmin";
-import TechnicalForm from "./pages/TechnicalForm";
+import "./App.css";
+import PhoneSelection from "./pages/PhoneSelection";
 import CreateModelForm from "./components/CreateModelForm";
 // import DatabaseView from "./pages/DatabaseView";
 import Faq from "./pages/Faq";
 import Profile from "./pages/Profile";
 import DatabaseUser from "./pages/DatabaseUser";
-import "./App.css";
+import TechnicalForm from "./pages/TechnicalForm";
 
 function App() {
   return (
@@ -16,11 +17,11 @@ function App() {
       <UserContextProvider>
         <Routes>
           <Route path="/" element={<Connection />} />
-          <Route path="/user-home" element={<HomeAdmin />} />
+          <Route path="/selection" element={<PhoneSelection />} />
           <Route path="/admin-new-model" element={<CreateModelForm />} />
           {/* <Route path="/bdd-globale" element={<DatabaseView />} /> */}
           <Route path="/faq" element={<Faq />} />
-          <Route path="/admin-home" element={<HomeAdmin />} />
+          <Route path="/admin-page" element={<HomeAdmin />} />
           <Route path="/fiche-technique" element={<TechnicalForm />} />
           <Route path="/bdd-user" element={<DatabaseUser />} />
           <Route path="/profile" element={<Profile />} />
