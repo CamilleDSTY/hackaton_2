@@ -78,6 +78,13 @@ div.features img {
   max-width: 25%;
   height: 25%;
 }
+#estimation-result {
+  text-align: center;
+  list-style-type: none;
+  margin-top: 3rem;
+
+  padding: 5px;
+}
 
 @media screen and (min-width: 768px) {
   h1.form-h1 {
