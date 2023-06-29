@@ -17,7 +17,12 @@
   font-size: large;
 }
 
-li {
+li.faq {
+  margin-top: 4%;
+  list-style: none;
+}
+
+li.logout {
   margin-top: 4%;
   list-style: none;
 }
