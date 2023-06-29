@@ -88,7 +88,7 @@ div.features img {
     padding: 5rem;
   }
 
-  form {
+  #box {
     width: 100%;
     display: grid;
     grid-template-columns: 40% 60%;
@@ -96,14 +96,14 @@ div.features img {
     margin: 0 auto;
   }
 
-  form > p {
+  #box > p {
     text-align: left;
     margin: 0;
     padding-top: 2px;
     font-size: 20px;
   }
 
-  form > label > select {
+  #box > label > select {
     height: 45px;
   }
 
