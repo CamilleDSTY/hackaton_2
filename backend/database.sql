@@ -52,7 +52,6 @@ CREATE TABLE `category` (
   `name` varchar(100) NOT NULL,
   `min` int NOT NULL,
   `max` int NOT NULL,
-  `color` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -154,7 +153,7 @@ DROP TABLE IF EXISTS `state`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `state` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` enum('DEEE','REPARABLE','BLOQUE','RECONDITIONNABLE','RECONDITIONNE') NOT NULL,
+  `title` enum('DEEE','REPARABLE','BLOQUE','RECONDITIONNABLE','RECONDITIONNE','BON','EXCELLENT') NOT NULL,
   `pond` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
