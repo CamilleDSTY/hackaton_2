@@ -13,6 +13,7 @@ export default function PhoneSelection() {
       credentials: "include",
     })
       .then((resp) => resp.json())
+
       .then((data) => {
         setModels(
           data.filter((model) => {
@@ -25,6 +26,7 @@ export default function PhoneSelection() {
       })
       .catch((err) => console.error(err));
   };
+
   const getAllBrands = () => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/brands`, {
       credentials: "include",

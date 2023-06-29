@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { createContext, useContext, useState, useMemo, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
 
 const UserContext = createContext();
 
@@ -31,7 +31,6 @@ function UserContextProvider({ children }) {
           return res.json();
         })
         .then((data) => {
-          console.warn(data.id);
           navigate(location.pathname);
           setIdUser(data.id);
           setRole(data.role);
@@ -51,6 +50,6 @@ function UserContextProvider({ children }) {
 
 const useUserContext = () => useContext(UserContext);
 
-UserContextProvider.propTypes = { children: PropTypes.elementType.isRequired };
+// UserContextProvider.propTypes = { children: PropTypes.elementType.isRequired };
 
 export { UserContextProvider, useUserContext };
