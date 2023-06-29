@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import "./createModelForm.css";
+import NavBar from "./NavBar";
 
 const imageTypes = ["image/jpeg", "image/jpg", "image/png"];
 
@@ -69,52 +70,57 @@ export default function CreateModelForm() {
   };
 
   return (
-    <div className="form-container">
-      <h2 className="form-h2">Enregistrer un nouveau modèle</h2>
-      <section className="form">
-        <p>Remplissez les champs ci-dessous pour enregistrer votre modèle :</p>
-        <p className="required-fields">* : champs obligatoires</p>
-        <form onSubmit={handleSubmit}>
-          <p className="p-input">
-            <strong>*</strong> Marque :
+    <>
+      <NavBar />
+      <div className="form-container">
+        <h2 className="form-h2">Enregistrer un nouveau modèle</h2>
+        <section className="createForm">
+          <p>
+            Remplissez les champs ci-dessous pour enregistrer votre modèle :
           </p>
-          <label htmlFor="brand">
-            <input
-              type="text"
-              className="form-input"
-              id="brand"
-              // placeholder="Nom du modèle"
-              value={brand}
-              onChange={handleChangeBrand}
-            />
-          </label>
-          <p className="p-input">
-            <strong>*</strong> Nom :
-          </p>
-          <label htmlFor="name">
-            <input
-              type="text"
-              className="form-input"
-              id="name"
-              // placeholder="Nom du modèle"
-              value={name}
-              onChange={handleChangeName}
-            />
-          </label>
-          <p className="p-input">Image :</p>
-          <label htmlFor="image">
-            <input
-              type="file"
-              className="form-input"
-              id="image"
-              onChange={handleChangeImage}
-            />
-          </label>
-          <button type="submit" className="form-validation-button">
-            Ajouter le modèle
-          </button>
-        </form>
-      </section>
-    </div>
+          <p className="required-fields">* : champs obligatoires</p>
+          <form className="createModelForm" onSubmit={handleSubmit}>
+            <p className="p-input">
+              <strong>*</strong> Marque :
+            </p>
+            <label htmlFor="brand">
+              <input
+                type="text"
+                className="form-input"
+                id="brand"
+                // placeholder="Marque"
+                value={brand}
+                onChange={handleChangeBrand}
+              />
+            </label>
+            <p className="p-input">
+              <strong>*</strong> Nom :
+            </p>
+            <label htmlFor="name">
+              <input
+                type="text"
+                className="form-input"
+                id="name"
+                // placeholder="Nom du modèle"
+                value={name}
+                onChange={handleChangeName}
+              />
+            </label>
+            <p className="p-input">Image :</p>
+            <label htmlFor="image">
+              <input
+                type="file"
+                className="form-input"
+                id="image"
+                onChange={handleChangeImage}
+              />
+            </label>
+            <button type="submit" className="form-validation-button">
+              Ajouter le modèle
+            </button>
+          </form>
+        </section>
+      </div>
+    </>
   );
 }

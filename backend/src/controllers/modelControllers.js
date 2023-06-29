@@ -3,7 +3,7 @@ const models = require("../models");
 
 const browse = (req, res) => {
   models.model
-    .findAll()
+    .findAllModels()
     .then(([rows]) => {
       res.send(rows);
     })
@@ -59,7 +59,6 @@ const add = (req, res) => {
   models.model
     .insert(model)
     .then(([result]) => {
-      console.log(result);
       res.status(201).json(result);
     })
     .catch((err) => {

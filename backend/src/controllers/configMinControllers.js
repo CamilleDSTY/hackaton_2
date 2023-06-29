@@ -51,8 +51,42 @@ const edit = (req, res) => {
     });
 };
 
+const add = (req, res) => {
+  const configMin = req.body;
+
+  // TODO validations (length, format...)
+
+  models.configMin
+    .insert(configMin)
+    .then(([result]) => {
+      res.status(201).json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const destroy = (req, res) => {
+  models.configMin
+    .delete(req.params.id)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   browse,
   read,
   edit,
+  add,
+  destroy,
 };
