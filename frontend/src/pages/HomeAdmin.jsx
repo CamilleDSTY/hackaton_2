@@ -10,9 +10,13 @@ export default function HomeAdmin() {
       <figcaption>
         <img src={Phone} alt="" />
       </figcaption>
-      <div className="button-container">
-        <button type="button">Gérer les utilisateurs</button>
-        <button type="button">Enregistrer un nouveau modèle</button>
+      <div className="adminpage-button-container">
+        <button type="button" className="adminpage-button">
+          Gérer les utilisateurs
+        </button>
+        <button type="button" className="adminpage-button">
+          Enregistrer un nouveau modèle
+        </button>
       </div>
       <div className="testtkt">
         <img src={Logo} alt="logo" />
