@@ -18,6 +18,12 @@ class modelManager extends AbstractManager {
       [model.name, model.image, model.brand_id, model.id]
     );
   }
+
+  findAllModels() {
+    return this.database.query(
+      `select m.name, m.image, b.title from  ${this.table} as m join brand as b on b.id = m.brand_id`
+    );
+  }
 }
 
 module.exports = modelManager;
