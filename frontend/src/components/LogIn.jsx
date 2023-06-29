@@ -83,7 +83,7 @@ function LogIn() {
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">
+        <div className="tittle">
           <img className="emmaus" src={Logo} alt="Loading..." />
         </div>
         {renderForm}
