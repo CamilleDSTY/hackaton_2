@@ -1,0 +1,40 @@
+.headband {
+  display: flex;
+  justify-content: center;
+  background: #00acb0;
+  font-size: xx-large;
+  width: 20%;
+  height: 656px;
+  color: #ffffff;
+}
+
+.params {
+  display: flex;
+  flex-direction: column;
+  bottom: 7%;
+  position: absolute;
+  text-align: center;
+  font-size: large;
+}
+
+li {
+  margin-top: 4%;
+  list-style: none;
+}
+
+div.void {
+  display: flex;
+  padding-top: 18%;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.logo {
+  width: 50%;
+}
+
+p.user {
+  display: flex;
+  margin-top: 8%;
+  text-align: center;
+}
