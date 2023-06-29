@@ -9,7 +9,7 @@ export default function CreateBrandForm() {
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [value, setValue] = useState("");
-  const [logo, setLogo] = useState("");
+  const [image, setImage] = useState("");
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
@@ -25,11 +25,11 @@ export default function CreateBrandForm() {
     }
   };
 
-  const handleChangeLogo = (e) => {
+  const handleChangeImage = (e) => {
     const fileSelected = e.target.files[0];
 
     if (imageTypes.includes(fileSelected.type)) {
-      setLogo(e.target.files[0]);
+      setImage(e.target.files[0]);
     } else {
       alert("Only .jpeg, .jpg and .png are allowed.");
     }
@@ -44,8 +44,8 @@ export default function CreateBrandForm() {
       const brandData = new FormData();
       brandData.append("title", title);
       brandData.append("value", value);
-      if (logo) {
-        brandData.append("logo", logo);
+      if (image) {
+        brandData.append("logo", image);
       }
 
       fetch(`${import.meta.env.VITE_BACKEND_URL}/api/brands`, {
@@ -101,12 +101,12 @@ export default function CreateBrandForm() {
               />
             </label>
             <p className="p-input">Logo :</p>
-            <label htmlFor="logo">
+            <label htmlFor="image">
               <input
                 type="file"
                 className="form-input"
                 id="logo"
-                onChange={handleChangeLogo}
+                onChange={handleChangeImage}
               />
             </label>
             <button type="submit" className="form-validation-button">
