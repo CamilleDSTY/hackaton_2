@@ -1,8 +1,81 @@
-.brandSelection {
-  height: fit-content;
+.allPhoneSection {
+  width: 100%;
 }
 
+.brandSelection {
+  margin-left: 8rem;
+}
+.phoneSection {
+  background-color: white;
+  box-shadow: 0 0 60px rgba(35, 61, 141, 0.12);
+  padding: 3rem 1.5rem;
+  margin: 5rem auto;
+  width: 80%;
+}
+#button-new-user {
+  background-color: #00acb0;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-left: 40%;
+  text-decoration: none;
+  color: white;
+}
+
+#enregistrement-criteres {
+  background-color: #00acb0;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-left: 40%;
+  text-decoration: none;
+  color: white;
+}
+
+a.enregistrement {
+  background-color: #00acb0;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-left: 27%;
+  text-decoration: none;
+  color: white;
+}
+
+.phoneCard {
+  padding: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+.phoneTable {
+  width: 100%;
+}
+
+.card > table {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.phoneTable tr:nth-child(even) {
+  background-color: #ced4e5;
+}
+.phoneTable tr:nth-child(odd) {
+  background-color: #e8ebf5;
+}
+.phoneTable th {
+  background-color: #233d8d;
+  color: white;
+}
+.phoneTable th,
+td {
+  border: 1px #233d8d;
+  padding: 12px;
+}
 .pagecount {
   padding: 1em;
   text-align: center;
+}
+#phoneTd:hover {
+  color: #00acb0;
+  scale: 1.15;
+}
+#phoneTd:visited {
+  color: #233d8d;
 }
