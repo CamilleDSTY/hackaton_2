@@ -9,6 +9,16 @@
   color: #ffffff;
 }
 
+li.faq {
+  margin-top: 4%;
+  list-style: none;
+}
+
+li.logout {
+  margin-top: 4%;
+  list-style: none;
+}
+
 div.void {
   display: flex;
   padding-top: 18%;
