@@ -1,21 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 import "./createModelForm.css";
 import NavBar from "./NavBar";
+import CreateBrandForm from "./CreateBrandForm";
 
 const imageTypes = ["image/jpeg", "image/jpg", "image/png"];
 
 export default function CreateModelForm() {
   // const navigate = useNavigate();
-  const [brand, setBrand] = useState("");
+  const [brands, setBrands] = useState("");
+  const [selectedBrand, setSelectedBrand] = useState("");
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
+
+  const getAllBrands = () => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/brands`, {
+      method: "GET",
+      credentials: "include",
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setBrands(data);
+      })
+      .catch((err) => console.error(err));
+  };
+
+  useEffect(() => {
+    getAllBrands();
+  }, [selectedBrand]);
+
+  if (!brands) {
+    return <p>En attente des marques...</p>;
+  }
 
   const handleChangeBrand = (e) => {
     const brandIdToUpdate = parseInt(e.target.value, 10);
 
     if (!Number.isNaN(brandIdToUpdate, 10)) {
-      setBrand(brandIdToUpdate);
+      setSelectedBrand(brandIdToUpdate);
     } else {
       alert("Ce champ est requis, veuillez renseigner une valeur");
     }
@@ -38,11 +61,11 @@ export default function CreateModelForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name || !brand) {
+    if (!name || !selectedBrand) {
       alert("Veuillez remplir tous les champs obligatoires.");
     } else {
       const modelData = new FormData();
-      modelData.append("brand_id", brand);
+      modelData.append("brand_id", selectedBrand);
       modelData.append("name", name);
       if (image) {
         modelData.append("image", image);
@@ -59,7 +82,7 @@ export default function CreateModelForm() {
         .then((res) => res.json())
         .then(() => {
           alert("Votre modèle a bien été enregistré.");
-          setBrand("");
+          setSelectedBrand("");
           setName("");
           setImage("");
         })
@@ -84,14 +107,15 @@ export default function CreateModelForm() {
               <strong>*</strong> Marque :
             </p>
             <label htmlFor="brand">
-              <input
-                type="text"
-                className="form-input"
-                id="brand"
-                // placeholder="Marque"
-                value={brand}
-                onChange={handleChangeBrand}
-              />
+              <select className="brandSelection" onChange={handleChangeBrand}>
+                <option>Choisir une marque</option>
+                {brands.map((brand) => (
+                  <option value={brand.id}>{brand.title}</option>
+                ))}
+              </select>
+              <Link to="/admin-new-brand" element={<CreateBrandForm />}>
+                Enregistrer une nouvelle marque
+              </Link>
             </label>
             <p className="p-input">
               <strong>*</strong> Nom :
