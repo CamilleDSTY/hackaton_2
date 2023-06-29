@@ -1,0 +1,78 @@
+section.box-faq {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+h1.title-faq {
+  margin-top: 2%;
+}
+figure.listing-faq {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  bottom: 10%;
+  position: absolute;
+}
+div.fonctionnality-service {
+  margin-bottom: 1%;
+  color: #ffffff;
+  padding-left: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: auto;
+  width: 70%;
+  background-color: #233d8d;
+}
+div.support-client {
+  margin-bottom: 1%;
+  color: #ffffff;
+  padding-left: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: auto;
+  width: 70%;
+  background-color: #233d8d;
+}
+div.suppress-account {
+  margin-bottom: 1%;
+  color: #ffffff;
+  padding-left: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: auto;
+  width: 70%;
+  background-color: #233d8d;
+}
+div.tutorials {
+  margin-bottom: 1%;
+  color: #ffffff;
+  padding-left: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: auto;
+  width: 70%;
+  background-color: #233d8d;
+}
+div.reinitialized-password {
+  margin-bottom: 1%;
+  color: #ffffff;
+  padding-left: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: auto;
+  width: 70%;
+  background-color: #233d8d;
+}
+div.update-account {
+  margin-bottom: 1%;
+  color: #ffffff;
+  padding-left: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: auto;
+  width: 70%;
+  background-color: #233d8d;
+}
