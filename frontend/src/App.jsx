@@ -7,8 +7,9 @@ import PhoneSelection from "./pages/PhoneSelection";
 import CreateModelForm from "./components/CreateModelForm";
 import Faq from "./pages/Faq";
 import TechnicalForm from "./pages/TechnicalForm";
-import Profile from "./pages/Profile";
 import DatabaseUser from "./pages/DatabaseUser";
+import CreateUser from "./components/CreateUser";
+import EstimationOptions from "./components/EstimationOptions";
 
 function App() {
   return (
@@ -19,11 +20,11 @@ function App() {
           <Route path="/user-home" element={<PhoneSelection />} />
           <Route path="/admin-new-model" element={<CreateModelForm />} />
           <Route path="/fiche-technique/:id" element={<TechnicalForm />} />
-          <Route path="/selection" element={<PhoneSelection />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/admin-page" element={<HomeAdmin />} />
           <Route path="/bdd-user" element={<DatabaseUser />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/bdd-user/new-user" element={<CreateUser />} />
+          <Route path="/criteres-estimation" element={<EstimationOptions />} />
         </Routes>
       </UserContextProvider>
     </main>
