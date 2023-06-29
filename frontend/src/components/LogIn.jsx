@@ -56,7 +56,7 @@ function LogIn() {
 
   const renderForm = (
     <div className="loginForm">
-      <form onSubmit={handleSubmit}>
+      <form className="form-responsive" onSubmit={handleSubmit}>
         <div className="input-container">
           <p className="connect">Connexion</p>
           <label htmlFor="email"> Email </label>

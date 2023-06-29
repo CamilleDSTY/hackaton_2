@@ -1,0 +1,27 @@
+main {
+  display: flex;
+}
+img.figcaption {
+  display: flex;
+  height: 80%;
+}
+.adminPageSection {
+  display: initial;
+}
+
+@media screen and (max-width: 1023px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+  .navbar-off {
+    display: flex;
+    width: 100%;
+    height: 13vh;
+    background-color: navy;
+    align-items: center;
+    justify-content: center;
+  }
+}
