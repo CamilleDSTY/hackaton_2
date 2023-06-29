@@ -37,8 +37,6 @@ function LogIn() {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.warn(data);
-
           if (data.role === "admin") {
             navigate(`/admin-home`);
             setIdUser(data.id);
