@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { UserContextProvider } from "./contexts/UserContext";
 import Connection from "./pages/Connection";
 import HomeAdmin from "./pages/HomeAdmin";
 import "./App.css";
@@ -12,18 +13,18 @@ import Profile from "./pages/Profile";
 function App() {
   return (
     <main>
-      <Router>
+      <UserContextProvider>
         <Routes>
           <Route path="/" element={<Connection />} />
-          <Route path="/user-metier" element={<NewModel />} />
+          <Route path="/user-home" element={<NewModel />} />
           <Route path="/bdd-globale" element={<DatabaseView />} />
           <Route path="/faq" element={<Faq />} />
-          <Route path="/admin-page" element={<HomeAdmin />} />
+          <Route path="/admin-home" element={<HomeAdmin />} />
           <Route path="/fiche-technique" element={<TechnicalForm />} />
           <Route path="/bdd-user" element={<DatabaseUser />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-      </Router>
+      </UserContextProvider>
     </main>
   );
 }
