@@ -24,7 +24,6 @@ div.login-form {
 
 p.connect {
   text-align: center;
-  margin-left: 15%;
   font-size: 25px;
   width: 30vw;
 }
@@ -85,6 +84,7 @@ img.emmaus {
 }
 
 img.logo2 {
+  position: fixed;
   width: 100px;
   height: 100px;
   padding: 1rem;
@@ -94,14 +94,16 @@ img.logo2 {
   input.border[type="email"],
   input.border[type="password"] {
     height: 35px;
+    background-color: lightgrey;
   }
-  form {
+  form.form-responsive {
     z-index: 50;
     font-size: 0.75rem;
   }
   img.logo2 {
-    width: 50px;
-    height: 50px;
+    position: fixed;
+    width: 100px;
+    height: 100px;
   }
   div.tittle {
     display: flex;
