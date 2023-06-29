@@ -1,13 +1,15 @@
+// import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Connection from "./pages/Connection";
 import HomeAdmin from "./pages/HomeAdmin";
-import "./App.css";
-import NewModel from "./components/NewModel";
+import CreateModelForm from "./components/CreateModelForm";
 import DatabaseView from "./pages/DatabaseView";
 import Faq from "./pages/Faq";
 import TechnicalForm from "./pages/TechnicalForm";
 import DatabaseUser from "./pages/DatabaseUser";
 import Profile from "./pages/Profile";
+import "./App.css";
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Connection />} />
-          <Route path="/user-metier" element={<NewModel />} />
+          <Route path="/admin-new-model" element={<CreateModelForm />} />
           <Route path="/bdd-globale" element={<DatabaseView />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/admin-page" element={<HomeAdmin />} />
