@@ -12,6 +12,13 @@ const passwordControllers = require("../controllers/passwordControllers");
 const userControllers = require("../controllers/userControllers");
 const authControllers = require("../controllers/authControllers");
 
+router.post(
+  "/login",
+  userControllers.login,
+  passwordControllers.verifyPassword,
+  authControllers.createToken
+);
+
 router.get(
   "/refresh-token",
   authControllers.verifyToken,
@@ -19,20 +26,15 @@ router.get(
   authControllers.createToken
 );
 
+router.use("/", authControllers.verifyToken);
+
 router.use("/users", userRouter);
+router.use("/models", modelRouter);
 router.use("/brands", brandRouter);
 router.use("/categories", categoryRouter);
 router.use("/rams", ramRouter);
 router.use("/states", stateRouter);
 router.use("/storages", storageRouter);
 router.use("/configmin", configMinRouter);
-router.use("/models", modelRouter);
-
-router.post(
-  "/login",
-  userControllers.login,
-  passwordControllers.verifyPassword,
-  authControllers.createToken
-);
 
 module.exports = router;

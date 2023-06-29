@@ -10,7 +10,6 @@ function UserContextProvider({ children }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [idUser, setIdUser] = useState("");
-
   const [role, setRole] = useState("");
 
   const userMemo = useMemo(() => ({
@@ -34,13 +33,13 @@ function UserContextProvider({ children }) {
         .then((data) => {
           console.warn(data.id);
           navigate(location.pathname);
-
           setIdUser(data.id);
           setRole(data.role);
         })
         .catch((err) => {
           console.error(err);
           alert("Error to login please try again !");
+          navigate("/");
         });
     }
   }, []);

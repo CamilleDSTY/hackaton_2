@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useUserContext } from "../context/UserContext";
+import { useUserContext } from "../contexts/UserContext";
 import "./LogIn.css";
 import Logo from "../assets/emaus-connect.png";
 
 function LogIn() {
-  // const dispatch = useUserContext()[1];
   const navigate = useNavigate();
+  const { setIdUser, setRole } = useUserContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [isSubmit] = useState("");
 
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
@@ -25,7 +24,7 @@ function LogIn() {
     if (!email || !password) {
       alert("You must provide an email and a password!!!!");
     } else {
-      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/users/login`, {
+      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/login`, {
         method: "POST",
         credentials: "include",
         headers: {
@@ -39,11 +38,20 @@ function LogIn() {
         .then((res) => res.json())
         .then((data) => {
           console.warn(data);
-          //     dispatch({ type: "SET_USER", payload: data });
-          navigate(`/`);
+
+          if (data.role === "admin") {
+            navigate(`/admin-home`);
+            setIdUser(data.id);
+            setRole(data.role);
+          } else if (data.role === "user") {
+            navigate(`/user-home`);
+            setIdUser(data.id);
+            setRole(data.role);
+          } else navigate("/");
         })
         .catch(() => {
           alert("Error to login, please try again!!!");
+          navigate("/");
         });
     }
   };
