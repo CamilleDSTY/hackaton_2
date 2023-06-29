@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import "./PhoneSelection.css";
 
 export default function PhoneSelection() {
   const [models, setModels] = useState();
   const [brands, setBrands] = useState();
   const [selectedBrand, setSelectedBrand] = useState("");
+
   const getAllModels = () => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/models`, {
       credentials: "include",
@@ -43,43 +45,46 @@ export default function PhoneSelection() {
     getAllModels();
     getAllBrands();
   }, [selectedBrand]);
+
   if (!models || !brands) {
     return <p>En attente des marques...</p>;
   }
   return (
     <>
       <NavBar />
-      <section>
-        <select
-          className="brandSelection"
-          onChange={(e) => {
-            setSelectedBrand(e.target.value);
-          }}
-        >
-          <option>Choisir une marque</option>
-          {brands.map((brand) => (
-            <option value={brand.id}>{brand.title}</option>
-          ))}
-        </select>
-
+      <section className="allPhoneSection">
         <section className="phoneSection">
+          <select
+            className="brandSelection"
+            onChange={(e) => {
+              setSelectedBrand(e.target.value);
+            }}
+          >
+            <option>Choisir une marque</option>
+            {brands.map((brand) => (
+              <option value={brand.id}>{brand.title}</option>
+            ))}
+          </select>
           <a href="/telephone" className="enregistrement">
             Enregistrer un nouveau téléphone
           </a>
+
           <div className="phoneCard">
             <table className="phoneTable">
-              <thead className="t1">
+              <thead>
                 <tr>
                   <th>marque</th>
                   <th>modèle</th>
                 </tr>
               </thead>
+
               <tbody>
                 {models.map((model) => (
                   <tr key={model.id}>
+                    <td>{model.title}</td>
+
                     <Link to={`/fiche-technique/${model.id}`}>
-                      <td>{model.title}</td>
-                      <td>{model.name}</td>
+                      <td id="phoneTd">{model.name}</td>
                     </Link>
                   </tr>
                 ))}
