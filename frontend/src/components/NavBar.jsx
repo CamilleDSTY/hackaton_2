@@ -28,14 +28,15 @@ export default function NavBar() {
     <section className="headband">
       <div className="void">
         <img className="logo" src={Logo} alt="" />
-        <p className="user">Bienvenue {firstname}</p>
+
+        <p className="helloUser">Bienvenue {firstname}</p>
       </div>
       <div className="params">
         <Link to="/faq">
-          <li> ? FAQ</li>
+          <li className="faq"> FAQ</li>
         </Link>
-        <Link to="/deconnexion">
-          <li>Deconnexion</li>
+        <Link to="/">
+          <li className="logout">Deconnexion</li>
         </Link>
       </div>
     </section>

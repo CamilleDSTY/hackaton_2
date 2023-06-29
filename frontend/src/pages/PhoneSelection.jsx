@@ -51,9 +51,9 @@ export default function PhoneSelection() {
     return <p>En attente des marques...</p>;
   }
   return (
-    <section className="allPhoneSection">
+    <>
+      <NavBar />
       <section>
-        <NavBar />
         <select
           className="brandSelection"
           onChange={(e) => {
@@ -65,12 +65,7 @@ export default function PhoneSelection() {
             <option value={brand.id}>{brand.title}</option>
           ))}
         </select>
-        <select className="modelSelection">
-          <option>Choisir un modèle</option>
-          {models.map((model) => (
-            <option>{model.name}</option>
-          ))}
-        </select>
+
         <section className="phoneSection">
           <a href="/telephone" className="enregistrement">
             Enregistrer un nouveau téléphone
@@ -98,6 +93,6 @@ export default function PhoneSelection() {
           </div>
         </section>
       </section>
-    </section>
+    </>
   );
 }

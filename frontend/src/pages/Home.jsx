@@ -1,3 +1,5 @@
+import PhoneSelection from "./PhoneSelection";
+
 export default function Home() {
-  return <p>C'est nous</p>;
+  return <PhoneSelection />;
 }

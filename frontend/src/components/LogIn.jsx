@@ -38,7 +38,7 @@ function LogIn() {
         .then((res) => res.json())
         .then((data) => {
           if (data.role === "admin") {
-            navigate(`/admin-home`);
+            navigate(`/admin-page`);
             setIdUser(data.id);
             setRole(data.role);
           } else if (data.role === "user") {
@@ -55,7 +55,7 @@ function LogIn() {
   };
 
   const renderForm = (
-    <div className="form">
+    <div className="loginForm">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <p className="connect">Connexion</p>
@@ -92,6 +92,7 @@ function LogIn() {
         <div className="tittle">
           <img className="emmaus" src={Logo} alt="Loading..." />
         </div>
+
         {renderForm}
       </div>
     </div>
