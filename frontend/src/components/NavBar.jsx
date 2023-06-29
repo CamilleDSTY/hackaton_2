@@ -28,7 +28,8 @@ export default function NavBar() {
     <section className="headband">
       <div className="void">
         <img className="logo" src={Logo} alt="" />
-        <p className="user">Bienvenue {firstname}</p>
+
+        <p className="helloUser">Bienvenue {firstname}</p>
       </div>
       <div className="params">
         <Link to="/faq">
