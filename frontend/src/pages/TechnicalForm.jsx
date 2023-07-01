@@ -136,7 +136,12 @@ export default function SelectForm() {
           <p className="technicals">Caractéristiques techniques :</p>
           <div className="features">
             {models.image ? (
-              <img src={models.image} alt={models.name} />
+              <img
+                src={`${import.meta.env.VITE_ASSETS_IMAGES_URL}models/${
+                  models.image
+                }`}
+                alt={models.name}
+              />
             ) : (
               <img
                 src="https://www.apple.com/newsroom/images/product/iphone/standard/iphonex_front_back_glass_big.jpg.large.jpg"
