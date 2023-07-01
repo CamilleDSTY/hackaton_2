@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import CreateModelForm from "../components/CreateModelForm";
 import "./PhoneSelection.css";
 
 export default function PhoneSelection() {
@@ -67,9 +68,13 @@ export default function PhoneSelection() {
               <option value={brand.id}>{brand.title}</option>
             ))}
           </select>
-          <a href="/telephone" className="enregistrement">
+          <Link
+            to="/admin-new-model"
+            element={<CreateModelForm />}
+            className="enregistrement"
+          >
             Enregistrer un nouveau téléphone
-          </a>
+          </Link>
 
           <div className="phoneCard">
             <table className="phoneTable">

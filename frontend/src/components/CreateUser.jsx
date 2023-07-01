@@ -133,7 +133,11 @@ export default function CreateModelForm() {
               />
             </label>
 
-            <button type="submit" id="form-validation-button-user">
+            <button
+              type="submit"
+              className="form-validation-button"
+              id="form-validation-button-user"
+            >
               Ajouter l'utilisateur
             </button>
           </form>

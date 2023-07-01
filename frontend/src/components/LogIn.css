@@ -24,9 +24,11 @@ div.login-form {
 
 p.connect {
   text-align: center;
-  font-size: 25px;
+  font-size: 2.5rem;
+  font-weight: 900;
   width: 30vw;
   margin-bottom: 5rem;
+  color: #233d8d;
 }
 
 input.border[type="email"],
@@ -34,19 +36,22 @@ input.border[type="password"] {
   height: 25px;
   border: none;
   border-bottom: 2px solid black;
-  padding: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 button[type="submit"].loginpage-button {
   cursor: pointer;
   padding: 7px 10px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  text-decoration: none;
+  margin: 0 auto;
+  margin-top: 2rem;
+  /* margin-bottom: 30px; */
   font-size: 1rem;
   border-radius: 25px;
+  border: none;
   color: white;
   background-color: #233d8d;
+  width: 40%;
 }
 
 .loginpage-button-container {
@@ -61,15 +66,15 @@ button[type="submit"].loginpage-button {
 div.input-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin: 10px;
+  left: 0;
+  gap: 12px;
 }
 div.app {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  margin-left: 15%;
+  width: 30%;
   max-height: 100vh;
 }
 div.tittle {
@@ -83,6 +88,9 @@ div.tittle {
 
 img.emmaus {
   max-height: 100vh;
+  position: fixed;
+  z-index: -1;
+  right: 0;
 }
 
 img.logo2 {

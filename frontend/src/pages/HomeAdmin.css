@@ -1,27 +1,36 @@
 .adminPageSection {
   display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .adminpage-button-container {
   display: flex;
   flex-direction: column;
-  margin-left: 17rem;
-  margin-top: 17rem;
+  /* margin-left: 17rem; */
+  /* margin-top: 17rem; */
   width: 100%;
+  height: 100vh;
   align-items: center;
+  justify-content: center;
 }
+
 .adminpage-button {
-  height: 20%;
+  height: 2.5rem;
   cursor: pointer;
-  padding: 5px 8px;
+  padding: 1rem 2rem;
+  padding-top: 0.75rem;
   margin-top: 15px;
   margin-bottom: 30px;
   text-decoration: none;
-  padding: 5px 10px;
   font-size: 1rem;
   border-radius: 25px;
+  border: none;
   color: white;
   background-color: #233d8d;
+  width: 25rem;
 }
 
 .testtkt {
@@ -55,23 +64,37 @@ footer.footer-off {
     height: 100%;
     margin-left: 0;
     margin-top: 0;
+    width: 75%;
+  }
+
+  .adminpage-button {
+    width: 15rem;
+    height: 4rem;
+    border-radius: 50px;
   }
   div.navbar-off {
     display: flex;
   }
-  section.adminpage-responsive {
+  section.adminPageSection {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100vh;
   }
-  section.adminPageSection {
+  /* section.adminPageSection {
     height: 100%;
+  } */
+
+  div.testtkt {
+    display: none;
   }
   footer.footer-off {
     display: flex;
+    align-items: center;
     flex-direction: row;
     background-color: #233d8d;
+    height: 3rem;
+    width: 100%;
   }
   footer.footer-off .link {
     display: flex;

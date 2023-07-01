@@ -106,14 +106,18 @@ export default function CreateModelForm() {
             <p className="p-input">
               <strong>*</strong> Marque :
             </p>
-            <label htmlFor="brand">
+            <label htmlFor="brand" id="form-brandSelection">
               <select className="brandSelection" onChange={handleChangeBrand}>
                 <option>Choisir une marque</option>
                 {brands.map((brand) => (
                   <option value={brand.id}>{brand.title}</option>
                 ))}
               </select>
-              <Link to="/admin-new-brand" element={<CreateBrandForm />}>
+              <Link
+                to="/admin-new-brand"
+                element={<CreateBrandForm />}
+                id="linkToNewBrandForm"
+              >
                 Enregistrer une nouvelle marque
               </Link>
             </label>
