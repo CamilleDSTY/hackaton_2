@@ -27,9 +27,15 @@ export default function NavBar() {
   return (
     <section className="headband">
       <div className="void">
-        <Link to="/user-home">
-          <img className="logo" src={Logo} alt="" />
-        </Link>
+        {idUser === 2 ? (
+          <Link to="/admin-page">
+            <img className="logo" src={Logo} alt="" />
+          </Link>
+        ) : (
+          <Link to="/user-home">
+            <img className="logo" src={Logo} alt="" />
+          </Link>
+        )}
 
         <p className="helloUser">Bienvenue {firstname}</p>
       </div>
@@ -38,7 +44,7 @@ export default function NavBar() {
           <li className="faq"> FAQ</li>
         </Link>
         <Link to="/">
-          <li className="logout">Deconnexion</li>
+          <li className="logout">Déconnexion</li>
         </Link>
       </div>
     </section>

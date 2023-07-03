@@ -30,9 +30,11 @@ export default function PhoneSelection() {
       <NavBar />
       <section className="allPhoneSection">
         <section className="phoneSection">
-          <Link id="button-new-user" to="new-user">
-            Enregistrer un nouvel utilisateur
-          </Link>
+          <div id="div-button-new-user">
+            <Link id="button-new-user" to="new-user">
+              Enregistrer un nouvel utilisateur
+            </Link>
+          </div>
           <div className="phoneCard">
             <table className="phoneTable">
               <thead>

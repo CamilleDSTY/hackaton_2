@@ -5,9 +5,9 @@ function Connection() {
   return (
     <section className="block">
       <img className="logo2" src={Logo} alt="" />
-      <div className="test">
-        <LogIn />
-      </div>
+      {/* <div className="test"> */}
+      <LogIn />
+      {/* </div> */}
     </section>
   );
 }

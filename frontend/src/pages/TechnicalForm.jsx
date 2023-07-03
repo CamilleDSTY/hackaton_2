@@ -18,6 +18,7 @@ export default function SelectForm() {
   const [stateValue, setStateValue] = useState();
   const [phoneValue, setPhoneValue] = useState();
   const [categoryValue, setCategoryValue] = useState();
+  const [className, setClassName] = useState("IdDefault");
 
   const getOneModel = () => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/models/${id}`, {
@@ -86,18 +87,22 @@ export default function SelectForm() {
   const changeCategory = () => {
     if (phoneValue > 375) {
       setCategoryValue("Catégorie : Premium");
+      setClassName("catPremium");
     } else if (phoneValue > 254) {
       setCategoryValue("Catégorie : A");
+      setClassName("catA");
     } else if (phoneValue > 164) {
       setCategoryValue("Catégorie : B");
+      setClassName("catB");
     } else if (phoneValue > 89) {
       setCategoryValue("Catégorie : C");
+      setClassName("catC");
     } else if (phoneValue > 0) {
       setCategoryValue("Catégorie : HC");
+      setClassName("catHC");
     } else if (phoneValue === 0) {
-      setCategoryValue(
-        "Désolé, nous ne reprenons pas de téléphone sans chargeur ni câble."
-      );
+      setCategoryValue("Hors critères");
+      setClassName("catOff");
     }
   };
 
@@ -126,12 +131,17 @@ export default function SelectForm() {
     <>
       <NavBar />
       <div className="form-select">
+        <h1 className="form-h1">{models.name}</h1>
         <section className="form-box">
-          <h1 className="form-h1">{models.name}</h1>
           <p className="technicals">Caractéristiques techniques :</p>
           <div className="features">
             {models.image ? (
-              <img src={models.image} alt={models.name} />
+              <img
+                src={`${import.meta.env.VITE_ASSETS_IMAGES_URL}models/${
+                  models.image
+                }`}
+                alt={models.name}
+              />
             ) : (
               <img
                 src="https://www.apple.com/newsroom/images/product/iphone/standard/iphonex_front_back_glass_big.jpg.large.jpg"
@@ -231,8 +241,12 @@ export default function SelectForm() {
                 Afficher l'estimation
               </button>
               <ul id="estimation-result">
-                <li>{phoneValue}</li>
-                <li>{categoryValue}</li>
+                <li className={`li-estimation-result ${className}`}>
+                  {phoneValue}
+                </li>
+                <li className={`li-estimation-result ${className}`}>
+                  {categoryValue}
+                </li>
               </ul>
             </form>
           </div>

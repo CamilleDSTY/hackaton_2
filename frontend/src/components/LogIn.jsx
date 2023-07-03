@@ -55,46 +55,46 @@ function LogIn() {
   };
 
   const renderForm = (
-    <div className="loginForm">
-      <form className="form-responsive" onSubmit={handleSubmit}>
-        <div className="input-container">
-          <p className="connect">Connexion</p>
-          <label htmlFor="email"> Email </label>
-          <input
-            className="border"
-            type="email"
-            name="email"
-            required
-            onChange={handleChangeEmail}
-          />
-        </div>
-        <div className="input-container">
-          <label htmlFor="password"> Mot de passe </label>
-          <input
-            className="border"
-            type="password"
-            name="pass"
-            required
-            onChange={handleChangePassword}
-          />
-        </div>
-        <div className="loginpage-button-container">
-          <button type="submit" className="loginpage-button">
-            Se connecter
-          </button>
-        </div>
-      </form>
-    </div>
+    // <div className="loginForm">
+    <form className="form-responsive" onSubmit={handleSubmit}>
+      <div className="input-container">
+        <p className="connect">Connexion</p>
+        <label htmlFor="email"> Email </label>
+        <input
+          className="border"
+          type="email"
+          name="email"
+          required
+          onChange={handleChangeEmail}
+        />
+        {/* </div> */}
+        {/* <div className="input-container"> */}
+        <label htmlFor="password"> Mot de passe </label>
+        <input
+          className="border"
+          type="password"
+          name="pass"
+          required
+          onChange={handleChangePassword}
+        />
+        {/* </div> */}
+        {/* <div className="loginpage-button-container"> */}
+        <button type="submit" className="loginpage-button">
+          Se connecter
+        </button>
+      </div>
+    </form>
+    // </div>
   );
   return (
     <div className="app">
-      <div className="login-form">
-        <div className="tittle">
-          <img className="emmaus" src={Logo} alt="Loading..." />
-        </div>
+      {/* <div className="login-form"> */}
+      {/* <div className="tittle"> */}
+      <img className="emmaus" src={Logo} alt="Loading..." />
+      {/* </div> */}
 
-        {renderForm}
-      </div>
+      {renderForm}
+      {/* </div> */}
     </div>
   );
 }

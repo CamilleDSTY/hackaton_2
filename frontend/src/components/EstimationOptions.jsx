@@ -64,7 +64,7 @@ export default function EstimationOptions() {
       <NavBar />
       <section className="allPhoneSection">
         <section className="phoneSection">
-          <a href="/*" id="enregistrement-criteres">
+          <a href="/admin-page" id="enregistrement-criteres">
             Modifier les critères d'estimation
           </a>
           <div className="phoneCard">

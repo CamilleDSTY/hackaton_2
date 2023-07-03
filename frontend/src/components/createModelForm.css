@@ -4,9 +4,9 @@ main {
 
 div.form-container {
   padding: 20px 0;
-  width: 75%;
+  width: 60%;
   margin: 0 auto;
-  margin-top: 4rem;
+  margin-top: 1.7rem;
   position: relative;
 }
 
@@ -53,6 +53,13 @@ label {
   width: 100%;
 }
 
+label#form-brandSelection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
 label > input.form-input {
   border: 1px solid #233d8d;
   border-radius: 5px;
@@ -62,11 +69,28 @@ label > input.form-input {
   padding: 0 0.5rem;
 }
 
-label > input#image {
+label > input#image,
+label > input#logo {
   margin-bottom: 2.5rem;
   cursor: pointer;
   /* display: none; */
   border: none;
+}
+
+select.brandSelection {
+  margin: 0;
+  height: 35px;
+}
+
+a#linkToNewBrandForm {
+  background-color: #00acb0;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50px;
+}
+a#linkToNewBrandForm:visited {
+  color: white;
 }
 
 button[type="submit"].form-validation-button {
@@ -85,17 +109,11 @@ button[type="submit"].form-validation-button {
 }
 
 button[type="submit"]#form-validation-button-user {
-  padding: 0.5rem;
-  padding-top: 0.55rem;
-  border: none;
+  grid-area: 7 / 1 / 7 / span 2;
+}
+
+a#enregistrement-criteres {
   border-radius: 50px;
-  text-decoration: none;
-  font-size: 17px;
-  background-color: #233d8d;
-  color: #ffffff;
-  width: 100%;
-  margin: auto;
-  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -122,7 +140,8 @@ button[type="submit"]#form-validation-button-user {
     font-size: 20px;
   }
 
-  .createModelForm > label > input {
+  .createModelForm > label > input,
+  select.brandSelection {
     height: 45px;
   }
 
