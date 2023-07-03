@@ -1,5 +1,6 @@
 // import some node modules for later
 
+require("dotenv").config();
 const fs = require("node:fs");
 const path = require("node:path");
 
@@ -13,24 +14,29 @@ const app = express();
 
 app.use(express.json());
 
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser());
+
 const cors = require("cors");
 
 app.use(
   cors({
     origin: process.env.FRONTEND_URL ?? "http://localhost:3000",
     optionsSuccessStatus: 200,
+    credentials: true,
   })
 );
 
 // import and mount the API routes
 
-const router = require("./router");
+const router = require("./routes");
 
-app.use(router);
+app.use("/api", router);
 
 // serve the `backend/public` folder for public resources
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use("/public", express.static(path.join(__dirname, "../public")));
 
 // serve REACT APP
 

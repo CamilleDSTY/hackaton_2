@@ -1,0 +1,134 @@
+section.block {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+section.block div.test {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+div.loginForm {
+  display: flex;
+  align-items: center;
+}
+
+div.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+p.connect {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  width: 30vw;
+  margin-bottom: 5rem;
+  color: #233d8d;
+}
+
+input.border[type="email"],
+input.border[type="password"] {
+  height: 25px;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+button[type="submit"].loginpage-button {
+  cursor: pointer;
+  padding: 7px 10px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  /* margin-bottom: 30px; */
+  font-size: 1rem;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  background-color: #233d8d;
+  width: 40%;
+}
+
+.loginpage-button-container {
+  display: flex;
+  justify-content: center;
+}
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+div.input-container {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  gap: 12px;
+}
+div.app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 15%;
+  width: 30%;
+  max-height: 100vh;
+}
+div.tittle {
+  filter: opacity(1);
+  display: flex;
+  width: 50vw;
+  position: fixed;
+  right: -10%;
+  top: 0;
+}
+
+img.emmaus {
+  max-height: 100vh;
+  position: fixed;
+  z-index: -1;
+  right: 0;
+}
+
+img.logo2 {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  input.border[type="email"],
+  input.border[type="password"] {
+    height: 35px;
+    background-color: lightgrey;
+  }
+  form.form-responsive {
+    z-index: 50;
+    font-size: 0.75rem;
+  }
+  img.logo2 {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+  }
+  div.tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  div.input-container {
+    width: 100%;
+  }
+  button[type="submit"] {
+    font-size: 1rem;
+  }
+  p.connect {
+    text-align: center;
+    font-size: 15px;
+    width: 30vw;
+  }
+}
